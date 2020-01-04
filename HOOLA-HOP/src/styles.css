@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: blue;
+    margin-top: 0;
+    
+}
+nav{
+    display: flex;
+    margin: 1%;
+    padding: 1%;
+    background-color: saddlebrown;
+    justify-content: center;
+}
+nav ul{
+    background-color: red;
+    width: 30%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+}
+nav ul li{
+    text-decoration: none;
+    list-style: none;
+    background-color: green;
+    margin: 1%;
+    width: 30%;
+    text-align: center;
+    
+}
