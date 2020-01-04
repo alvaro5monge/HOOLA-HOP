@@ -11,10 +11,15 @@ export class ListaUsuariosComponent implements OnInit {
 
   lista:Usuarios[]=[];
   constructor(public servicio:UsuariosService) { 
-    this.lista=servicio.buscarTodos();
+    
   }
 
   ngOnInit() {
+    this.lista=this.servicio.buscarTodos();
+  }
+
+  borrar(usuario: Usuarios){
+    this.servicio.borrar(usuario);
   }
 
 }
