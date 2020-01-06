@@ -19,7 +19,6 @@ listaRedesSociales  = [
 
 app.get("/listaRedesSociales", (req, res) => {
 
-  console.log(res);
   res.send(listaRedesSociales);
 });
 
