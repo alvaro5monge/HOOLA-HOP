@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UsuariosService } from './servicio/usuarios.service';
+import { RedesSocialesComponent } from './redes-sociales/redes-sociales.component';
+import { RedesSocialesService } from './servicio/redes-sociales.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import { UsuariosService } from './servicio/usuarios.service';
     ListaUsuariosComponent,
     LoginComponent,
     RegistroComponent,
+    RedesSocialesComponent,
     
     
   ],
@@ -24,7 +27,7 @@ import { UsuariosService } from './servicio/usuarios.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [HttpClient, UsuariosService],
+  providers: [HttpClient, UsuariosService, RedesSocialesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

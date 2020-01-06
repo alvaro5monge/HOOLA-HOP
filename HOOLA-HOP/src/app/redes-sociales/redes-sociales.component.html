@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Redes Sociales</title>
+</head>
+<body>
+    <p>Hola mundo</p>
+    <div class="redSocial" *ngFor="let red of lista">
+        <div class="imagen">
+            {{red.img}}
+        </div>
+        
+        <div class="nombre">
+            {{red.nombre}}
+        </div>
+            
+        <div class="usuarios">
+            {{red.usuarios}}
+        </div>
+    </div>
+    
+</body>
+</html>
