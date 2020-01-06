@@ -9,8 +9,8 @@ export class UsuariosService {
   lista:Usuarios[]=[];
 
   constructor() {     
-    this.lista.push(new Usuarios(1,"Alvaro","Monge","Hola"));
-    this.lista.push(new Usuarios(2,"Alex","Fandiño","Hola1"));
+    this.lista.push(new Usuarios(1,"Alvaro","Monge","Bilbo","ala@gamil.com","Hola","Hola"));
+    this.lista.push(new Usuarios(2,"Alex","Fandiño","Bilbo","a@gamil.com","Hola1","Hola1"));
   }
     public buscarTodos(){
       return this.lista;

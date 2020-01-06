@@ -9,6 +9,7 @@ import { Usuarios } from '../dominio/usuarios';
 })
 export class ListaUsuariosComponent implements OnInit {
 
+  usuarioNuevo:Usuarios;
   lista:Usuarios[]=[];
   constructor(public servicio:UsuariosService) { 
     
@@ -21,5 +22,6 @@ export class ListaUsuariosComponent implements OnInit {
   borrar(usuario: Usuarios){
     this.servicio.borrar(usuario);
   }
+  
 
 }

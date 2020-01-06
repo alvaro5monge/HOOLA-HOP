@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.texto{
+    text-align: center;
+}
+form{
+    margin-top: 2%;
+    margin-left: 35%;
+    
+}
+/*Separacion entre input*/
+table { 
+    border-spacing: 5px;
+    border-collapse: separate;
+}
+td { 
+    padding: 5px;
+}
+button{
+    width: 10%;
+    height: 8%;
+}
+.form-control{
+    width: 100%;
+}

@@ -11,9 +11,13 @@
         <tr *ngFor="let usuario of lista">
             <td>{{usuario.id}}</td>
             <td>{{usuario.nombre}}</td>
-            <td>{{usuario.apellido}}</td>
+            <td>{{usuario.ciudad}}</td>
+            <td>{{usuario.correo}}</td>
             <td>{{usuario.password}}</td>
+            <td>{{usuario.segundapassword}}</td>
+            
             <td><input type="button" value="BORRAR" (click)="borrar(usuario)"></td>
+            
         </tr>
     </table>
     <button style="margin-left: 100px;" class="btn btn-primary" >Enviar</button>
