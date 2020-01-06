@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuarios } from '../dominio/usuarios';
+import { Usuario } from '../dominio/usuario';
 import { UsuariosService } from '../servicio/usuarios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -9,14 +10,20 @@ import { UsuariosService } from '../servicio/usuarios.service';
 })
 export class RegistroComponent implements OnInit {
   lista=[];
-  usuarioNuevo:Usuarios;
-  constructor(public servicio:UsuariosService) { 
-    this.usuarioNuevo=new Usuarios(3,"","","","","","")
+  usuarioNuevo:Usuario;
+  password2: string;
+  constructor(public servicio:UsuariosService, private router: Router) { 
+    this.usuarioNuevo=new Usuario(3,"","","","","")
   }
 
   ngOnInit() {
   }
-  public insertar(usuario:Usuarios):void {
-    this.servicio.insertar(usuario);
+  public insertar(usuario:Usuario):void {
+    this.servicio.insertar(usuario).subscribe((datos)=>{
+      
+      this.router.navigateByUrl("lista");
+      
+    });
+
   }
 }

@@ -6,20 +6,25 @@ import { AppComponent } from './app.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { UsuariosService } from './servicio/usuarios.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaUsuariosComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [HttpClient, UsuariosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

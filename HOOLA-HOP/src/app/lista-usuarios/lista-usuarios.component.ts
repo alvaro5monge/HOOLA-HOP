@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from '../servicio/usuarios.service';
-import { Usuarios } from '../dominio/usuarios';
+import { Usuario } from '../dominio/usuario';
 
 @Component({
   selector: 'app-lista-usuarios',
@@ -9,17 +9,21 @@ import { Usuarios } from '../dominio/usuarios';
 })
 export class ListaUsuariosComponent implements OnInit {
 
-  usuarioNuevo:Usuarios;
-  lista:Usuarios[]=[];
+  usuarioNuevo:Usuario;
+  lista:Usuario[]=[];
   constructor(public servicio:UsuariosService) { 
     
   }
 
   ngOnInit() {
-    this.lista=this.servicio.buscarTodos();
+    this.servicio.buscarTodos().subscribe((lista)=>{
+      console.log("hecho");
+      
+      this.lista = lista;
+    });
   }
 
-  borrar(usuario: Usuarios){
+  borrar(usuario: Usuario){
     this.servicio.borrar(usuario);
   }
   

@@ -1,29 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Usuarios } from '../dominio/usuarios';
+import { Usuario } from '../dominio/usuario';
+import { HttpClient } from "@angular/common/http"
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
 
-  lista:Usuarios[]=[];
+  lista:Usuario[]=[];
 
-  constructor() {     
-    this.lista.push(new Usuarios(1,"Alvaro","Monge","Bilbo","ala@gamil.com","Hola","Hola"));
-    this.lista.push(new Usuarios(2,"Alex","Fandiño","Bilbo","a@gamil.com","Hola1","Hola1"));
+  constructor(private http: HttpClient ) {     
+    this.lista.push(new Usuario(1,"Alvaro","Monge","Bilbo","ala@gamil.com","Hola"));
+    this.lista.push(new Usuario(2,"Alex","Fandiño","Bilbo","a@gamil.com","Hola1"));
   }
-    public buscarTodos(){
-      return this.lista;
+    public buscarTodos(): Observable<Usuario[]>{
+      return this.http.get<Usuario[]>("http://localhost:3000/listaUsuarios");
     }
-    public borrar(usuario:Usuarios):void {
+    public borrar(usuario:Usuario):void {
 
       let indice=this.lista.indexOf(usuario);
       this.lista.splice(indice,1);
 
     }
 
-    public insertar(usuario:Usuarios):void {
+    public insertar(usuario:Usuario): Observable<Usuario> {
 
-      this.lista.push(usuario);
+      return this.http.post<Usuario>("http://localhost:3000/crearUsuario", usuario)
     }
 }
