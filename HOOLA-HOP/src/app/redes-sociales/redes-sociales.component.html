@@ -1,14 +1,9 @@
 <p>Hola mundo</p>
-<div class="redSocial" *ngFor="let red of lista">
-    <div class="imagen">
-        {{red.img}}
+<div class="card" style="width: 18rem;" *ngFor="let red of lista">
+    <img src=D:\GIT\Proyectos\HOOLA-HOP\HOOLA-HOP\src\assets\images\insta.png class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{red.nombre}}</h5>
+      <p class="card-text">{{red.usuarios}}</p>
+      <a href="#" class="btn btn-primary">VER</a>
     </div>
-
-    <div class="nombre">
-        {{red.nombre}}
-    </div>
-
-    <div class="usuarios">
-        {{red.usuarios}}
-    </div>
-</div>
+  </div>

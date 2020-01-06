@@ -14,7 +14,7 @@ export class RedesSocialesService {
     
     }
     public buscarTodos(): Observable<RedSocial[]>{
-      return this.http.get<RedSocial[]>("http://localhost:3000/redesSociales");
+      return this.http.get<RedSocial[]>("http://localhost:3000/listaRedesSociales");
     }
     public borrar(red:RedSocial):void {
 

@@ -10,9 +10,13 @@ import { RedesSocialesService } from '../servicio/redes-sociales.service';
 export class RedesSocialesComponent implements OnInit {
 
   lista:RedSocial[]=[];
-  constructor(servicioSocial: RedesSocialesService) { }
+  constructor(public servicioSocial: RedesSocialesService) { }
 
   ngOnInit() {
+    this.servicioSocial.buscarTodos().subscribe((lista)=>{
+      console.log("hecho");
+      this.lista=lista;
+    });
   }
 
 }

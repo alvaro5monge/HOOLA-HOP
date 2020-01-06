@@ -17,6 +17,11 @@ listaRedesSociales  = [
   {"id": 0, "nombre" : "Twitter", "usuarios": 20000000, "img": "D:\GIT\Proyectos\HOOLA-HOP\HOOLA-HOP\src\assets\images\twitter.png"},
 ]
 
+app.get("/listaRedesSociales", (req, res) => {
+
+  console.log(res);
+  res.send(listaRedesSociales);
+});
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
